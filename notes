@@ -1,0 +1,17 @@
+i included a compiled version and the source files.  it expects the first argument to be a formula string, and allows a second argument for verbosity.
+
+ex: "java cfnga '(-c v a) ^ b ^ (d v e) ^ -d ^ (f v c) ^ g'"
+    "java cfnga '(-c v a) ^ b ^ (d v e) ^ -d ^ (f v c) ^ g' 1" for verbosity 1
+    "java cfnga '(-c v a) ^ b ^ (d v e) ^ -d ^ (f v c) ^ g' 2" for verbosity 2
+
+i assumed that the variable inputs should always be single, lower case characters starting with 'a', and never skipping the next character in line (e.g. ['a','b','c','d'], not ['a','b','c','e'] or ['b','c','d','e']).
+
+i've updated the previous submission so that there cannot be the same candidate in the population as both parents.
+
+i've also updated the getFitness() method since the last submission to use the HashSet objects in a more efficient manner.
+
+
+i am using a particular method for selectParent() that is meant to have selection based purely upon their fitness and not skewed by their position in the Population.candidates[] array.  there is a note above the method that explains my reasoning better.
+
+at the top of cnfga.java's main() are the pop_size and max_gens variables for you to manipulate.  i wanted to just have those be input variables for you to adjust but i didn't get around to setting that up.
+
